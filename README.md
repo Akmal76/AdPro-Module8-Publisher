@@ -9,7 +9,12 @@ _Publisher_ dan _subscriber_ mengakses yang sama yaitu `amqp://guest:guest@local
 
 ## Message Broker dengan RabbitMQ
 ### Running RabbitMQ as message broker
-<img src="https://media.discordapp.net/attachments/1231573845731708940/1231573865189085204/image.png?ex=6626500a&is=6624fe8a&hm=6be41f7646f6e7d3f2877cc4b427c71fa095ef2737816a5cfe5cfd51ef0c7dfd&=&format=webp&quality=lossless&width=1100&height=662">
+<img src="image/img_0.png">
+
+### Sending and Processing Event
+<img src="image/img_1.png">
+
+Pada saat _message broker_ atau RabbitMQ berjalan, ketika program Subscriber dan Publisher kita jalankan (`cargo run`), maka Publisher akan mengirimkan data ke _message broker_ dan Subscriber akan menerima data tersebut. Pada gambar di atas, kita dapat melihat bahwa Publisher mengirimkan data sekali ke _message broker_ dan Subscriber menerimanya.
 
 ## Referensi
 - Module 8 - Software Architecture oleh Ade Azurat dan Tim Pengajar.
