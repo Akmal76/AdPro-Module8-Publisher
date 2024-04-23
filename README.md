@@ -21,19 +21,5 @@ Pada saat _message broker_ atau RabbitMQ berjalan, ketika program Subscriber dan
 
 Pada gambar di atas, saya mencoba untuk _run_ Publisher berkali-kali sehingga _message rates_-nya meningkat lalu untuk beberapa detik kemudian saya mencoba melakukan _run_ dua kali dengan waktu jeda yang agak lama. Dari apa yang saya lakukan, saya pahami bahwa **_message rates_ akan meningkat ketika Publisher mengirimkan data ke _message broker_**. Jika _message rates_ tinggi, maka _message broker_ akan menerima banyak data dari Publisher.
 
-### Simulation slow subscriber.
-<img src="image/img_3.png">
-
-Pada gambar di atas, saya membuat _subscriber_ lamban dalam menerima atau mengelola data dari _message broker_ dengan _delay_ 1 detik untuk tiap prosesnya. Yang terjadi adalah _queued messages_ pada _message broker_ akan bertambah seiring dengan bertambahnya _delay_ yang diberikan karena publisher lebih cepat mengirim dibandingkan subscriber yang menerima. Pada kasus saya, banyaknya _queued messages_ pada _message broker_ adalah 6 untuk dua kali melakukan _run_ Publisher. 
-
-### One publisher and three subscribers.
-<img src="image/img_4_1.png">
-
-<img src="image/img_4_2.png">
-
-Hal yang sama saya lakukan seperti pada bagian **Simulation slow subscriber**. Jika kita menjalankan lebih satu _subcribers_, pengiriman data jauh lebih cepat dan pada kasus saya terlihat bahwa tidak ada yang masuk ke dalam _queued messages_ pada _message broker_. Hal ini terjadi karena _message broker_ akan mendistribusikan data yang diterima dari Publisher ke banyak _subscribers_ yang terhubung.
-
-Tanpa mengubah kode dari program, kita bisa memperoleh hasil yang berbeda dengan mengubah konfigurasi _message broker_ atau jumlah dari _subscriber_ yang berjalan. Inilah yang disebut dengan _event driven_.
-
 ## Referensi
 - Module 8 - Software Architecture oleh Ade Azurat dan Tim Pengajar.
